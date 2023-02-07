@@ -35,7 +35,10 @@ References:
 
 ## Testing locally
 
-The container can be built with Docker:
+The container can be built with Docker or Podman:
 ```
 docker build -f Containerfile .
+```
+```
+podman build -f Containerfile .
 ```
