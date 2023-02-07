@@ -1,4 +1,4 @@
-name: ublue-image
+name: build-ublue
 on:
   push:
     branches:
@@ -6,18 +6,25 @@ on:
     paths-ignore:
       - '**/README.md'
   schedule:
-    - cron: '0 0 * * *'  # midnight
+    - cron: '0 0 * * *'  # 8:20pm everyday
+env:
+  IMAGE_NAME: ublue-image
+  IMAGE_TAGS: latest ${{ github.sha }}
+  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+  REGISTRY_USER: ${{ github.actor }}
+  REGISTRY_PASSWORD: ${{ github.token }}
+
 jobs:
   push-ghcr:
     name: Build and push image
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
-    steps:
-      # Checkout push-to-registry action github repository
+    steps: 
+      # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v2
-
+  
       # Build image using Buildah action
       - name: Build Image
         id: build_image
@@ -41,8 +48,7 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           extra-args: |
             --disable-content-trust
-
+          
       - name: Echo outputs
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
-
