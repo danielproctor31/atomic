@@ -14,7 +14,7 @@ Create a personal access token with `read:packages` permission: https://docs.git
 
 The config file needs to be created at `/etc/ostree/auth.json`. As the auth needs to be in base64 - it can be generated using Podman and copied over.
 ```
-podman login
+podman login ghcr.io
 ```
 Enter your github username and the personal access token as the password.
 
@@ -22,6 +22,11 @@ Copy the generated config file to `/etc/ostree/auth.json`.
 
 ```
 cp ${XDG_RUNTIME_DIR}/containers/auth.json /etc/ostree/auth.json
+```
+
+Optionally logout from podman:
+```
+podman logout ghcr.io
 ```
 
 References:
