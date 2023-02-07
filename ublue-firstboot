@@ -1,0 +1,53 @@
+#!/bin/sh
+
+if test -e "$HOME"/.config/ublue/firstboot-done; then
+    echo "Already ran"
+    exit 0
+fi
+
+(
+echo "# Waiting for Internet connection"
+until /usr/bin/ping -q -c 1 flathub.org; do sleep 1; done
+echo "00"
+
+echo "# Removing Filtered Flathub Repository"
+/usr/bin/flatpak remote-delete flathub --force ||:
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Removing Filtered Flathub Repo Failed"
+        exit 1
+fi
+echo "30"
+
+echo "# Enabling Flathub Repository"
+/usr/bin/flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Adding Flathub Repo Failed"
+        exit 1
+fi
+echo "60"
+
+echo "# Installing Firefox"
+/usr/bin/flatpak install --user --noninteractive flathub org.mozilla.firefox
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Firefox Failed"
+        exit 1
+fi
+echo "90"
+
+echo "# Reticulating Final Splines"
+mkdir -p "$HOME"/.config/ublue/
+touch "$HOME"/.config/ublue/firstboot-done
+cp -n /etc/justfile "$HOME"/.justfile
+echo "100"
+
+) | 
+     
+   zenity --progress --title="uBlue Desktop Firstboot" --percentage=0 --auto-close --no-cancel --width=300
+
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Firstboot Configuration Error"
+fi
