@@ -4,7 +4,7 @@ https://github.com/ublue-os
 
 ## Usage
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/danielproctor31/ublue-image:latest
+sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielproctor31/ublue-image:latest
 ```
 
 ## Auth
