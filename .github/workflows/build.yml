@@ -1,5 +1,6 @@
 name: build-ublue
 on:
+  workflow_dispatch:
   push:
     branches:
       - main

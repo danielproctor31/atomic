@@ -21,7 +21,7 @@ Enter your github username and the personal access token as the password.
 Copy the generated config file to `/etc/ostree/auth.json`.
 
 ```
-cp ${XDG_RUNTIME_DIR}/containers/auth.json /etc/ostree/auth.json
+sudo cp ${XDG_RUNTIME_DIR}/containers/auth.json /etc/ostree/auth.json
 ```
 
 References:
