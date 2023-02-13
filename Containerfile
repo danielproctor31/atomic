@@ -12,6 +12,5 @@ RUN rpm-ostree override remove firefox firefox-langpacks && \
     # Enable auto updates
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
-    systemctl enable flatpak-automatic.timer && \
     # Commit.
     ostree container commit
