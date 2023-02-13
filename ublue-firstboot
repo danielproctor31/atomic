@@ -28,18 +28,27 @@ if [ "$?" != 0 ] ; then
 fi
 echo "60"
 
-echo "# Installing Firefox"
-/usr/bin/flatpak install --user --noninteractive flathub org.mozilla.firefox
+echo "# Installing Chrome"
+/usr/bin/flatpak install --user --noninteractive flathub com.google.Chrome
 if [ "$?" != 0 ] ; then
         zenity --error \
-          --text="Installing Firefox Failed"
+          --text="Installing Chrome Failed"
         exit 1
 fi
 echo "90"
 
+echo "# Adding Chrome Flatpak permissions"
+/usr/bin/flatpak override com.google.Chrome --filesystem=~/.local/share/applications
+/usr/bin/flatpak override com.google.Chrome --filesystem=~/.local/share/icons
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Adding Chrome Flatpak permissions Failed"
+        exit 1
+fi
+echo "95"
+
 echo "# Reticulating Final Splines"
 mkdir -p "$HOME"/.config/ublue/
-touch "$HOME"/.config/ublue/firstboot-done
 cp -n /etc/justfile "$HOME"/.justfile
 echo "100"
 
