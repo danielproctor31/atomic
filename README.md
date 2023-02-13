@@ -1,4 +1,4 @@
-# ublue-image
+# ublue
 
 https://github.com/ublue-os
 
