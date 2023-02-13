@@ -7,7 +7,7 @@ on:
     paths-ignore:
       - '**/README.md'
   schedule:
-    - cron: '0 0 * * *'  # 8:20pm everyday
+    - cron: '0 0 * * *'  # midnight everyday
 env:
   IMAGE_NAME: ublue-image
   IMAGE_TAGS: latest ${{ github.sha }}
