@@ -49,7 +49,6 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           extra-args: |
             --disable-content-trust
-          
 
       # Sign container
       - uses: sigstore/cosign-installer@main
@@ -72,7 +71,7 @@ jobs:
 
       - name: Sign container image
         run: |
-          cosign sign --key cosign.key ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}
+          cosign sign --key cosign.key ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push.outputs.digest }}
         env:
           COSIGN_EXPERIMENTAL: false
 
