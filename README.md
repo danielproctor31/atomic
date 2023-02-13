@@ -7,7 +7,7 @@ https://github.com/ublue-os
 sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielproctor31/ublue-image:latest
 ```
 
-## Auth
+## Private Repo Auth
 If you are building images using a private repo, authentication is required.
 
 Create a personal access token with `read:packages` permission: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
