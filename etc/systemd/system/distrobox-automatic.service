@@ -1,7 +1,11 @@
 [Unit]
 Description=distrobox-upgrade Automatic Update
- 
+Wants=network-online.target
+After=network-online.target
+
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/usr/bin/distrobox-upgrade --all
-StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
