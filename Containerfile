@@ -10,7 +10,7 @@ RUN rpm-ostree override remove firefox firefox-langpacks && \
     # Enable repo's.
     rpm-ostree install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
     # Install packages.
-    rpm-ostree install vim zsh steam-devices wireguard-tools distrobox code podman-compose docker docker-compose && \
+    rpm-ostree install zsh steam-devices wireguard-tools distrobox code gnome-tweaks docker docker-compose && \
     # Enable auto updates
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
