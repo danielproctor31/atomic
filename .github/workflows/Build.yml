@@ -1,15 +1,19 @@
 name: Build
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/README.md'
-  schedule:
-    - cron: '0 0 * * *'  # midnight everyday
+  workflow_call:
+    inputs:
+      IMAGE_NAME:
+        required: true
+        type: string
+      SILVERBLUE_VERSION:
+          required: false
+          type: string 
+      FEDORA_MAJOR_VERSION:
+          required: false
+          type: string   
+
 env:
-  IMAGE_NAME: silverblue
+  IMAGE_NAME: ${{ IMAGE_NAME }}
   IMAGE_TAGS: latest ${{ github.sha }}
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
   REGISTRY_USER: ${{ github.actor }}
@@ -36,6 +40,9 @@ jobs:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
+          build-args:
+            - SILVERBLUE_VERSION=${{ SILVERBLUE_VERSION }}
+            - FEDORA_MAJOR_VERSION=${{ FEDORA_MAJOR_VERSION }}
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
