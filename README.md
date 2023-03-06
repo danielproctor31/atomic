@@ -1,6 +1,7 @@
 # silverblue
 
 Based on the work done in: https://github.com/ublue-os
+
 This is my own custom image for Fedora Silverblue which can be used to quickly setup and new system to my preference and provide future updates.
 
 ## Usage
