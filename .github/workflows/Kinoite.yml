@@ -11,7 +11,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: danielproctor31/silverblue/.github/workflows/Build.yml@v1
+    uses: danielproctor31/silverblue/.github/workflows/Build.yml@main
     with:
       IMAGE_NAME: kinoite
       SILVERBLUE_VERSION: kinoite
