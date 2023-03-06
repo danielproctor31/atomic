@@ -13,6 +13,6 @@ jobs:
   call-workflow:
     uses: danielproctor31/silverblue/.github/workflows/Build.yml@main
     with:
-      IMAGE_NAME: kinoite
-      SILVERBLUE_VERSION: kinoite
+      IMAGE_NAME: 'kinoite'
+      SILVERBLUE_VERSION: 'kinoite'
       FEDORA_MAJOR_VERSION: 37
