@@ -39,9 +39,9 @@ jobs:
           image: ${{ inputs.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
-          build-args:
-            - SILVERBLUE_VERSION=${{ inputs.SILVERBLUE_VERSION }}
-            - FEDORA_MAJOR_VERSION=${{ inputs.FEDORA_MAJOR_VERSION }}
+          build-args: 
+            SILVERBLUE_VERSION=${{ inputs.SILVERBLUE_VERSION }} 
+            FEDORA_MAJOR_VERSION=${{ inputs.FEDORA_MAJOR_VERSION }}
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
