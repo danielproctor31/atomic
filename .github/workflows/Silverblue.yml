@@ -13,6 +13,6 @@ jobs:
   call-workflow:
     uses: danielproctor31/silverblue/.github/workflows/Build.yml@main
     with:
-      IMAGE_NAME: 'silverblue'
+      IMAGE_TAGS: latest ${{ github.sha }}
       SILVERBLUE_VERSION: 'silverblue'
       FEDORA_MAJOR_VERSION: 37

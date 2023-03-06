@@ -1,4 +1,4 @@
-name: Kinote
+name: Kinoite
 on:
   workflow_dispatch:
   push:
@@ -13,6 +13,6 @@ jobs:
   call-workflow:
     uses: danielproctor31/silverblue/.github/workflows/Build.yml@main
     with:
-      IMAGE_NAME: 'kinoite'
+      IMAGE_TAGS: kinoite-latest ${{ github.sha }}
       SILVERBLUE_VERSION: 'kinoite'
       FEDORA_MAJOR_VERSION: 37
