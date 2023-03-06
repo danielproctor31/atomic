@@ -39,7 +39,7 @@ jobs:
           image: ${{ inputs.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
           oci: true
-          build-args: 
+          build-args: |
             SILVERBLUE_VERSION=${{ inputs.SILVERBLUE_VERSION }} 
             FEDORA_MAJOR_VERSION=${{ inputs.FEDORA_MAJOR_VERSION }}
 
