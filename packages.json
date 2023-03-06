@@ -12,7 +12,9 @@
                 "docker-compose"
             ],
             "silverblue": [
-                "gnome-tweaks"
+                "gnome-tweaks",
+                "gnome-shell-extension-appindicator",
+                "gnome-shell-extension-dash-to-dock"
             ]
         },
         "exclude": {
