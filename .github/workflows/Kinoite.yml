@@ -11,7 +11,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: ${{ github.repository_owner }}/${{ github.repository }}/.github/workflows/Build.yml@main
+    uses: danielproctor31/silverblue/.github/workflows/Build.yml@main
     with:
       IMAGE_NAME: 'kinoite'
       SILVERBLUE_VERSION: 'kinoite'
