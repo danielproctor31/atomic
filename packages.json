@@ -1,0 +1,41 @@
+{
+    "all": {
+        "include": {
+            "all": [
+                "vim",
+                "zsh",
+                "steam-devices",
+                "wireguard-tools",
+                "distrobox",
+                "code",
+                "docker",
+                "docker-compose"
+            ],
+            "silverblue": [
+                "gnome-tweaks"
+            ]
+        },
+        "exclude": {
+            "all": [
+                "firefox",
+                "firefox-langpacks"
+            ]
+        }
+    },
+    "37": {
+        "include": {
+            "all": []
+        },
+        "exclude": {
+            "all": []
+        }
+    },
+    "38": {
+        "include": {
+            "all": []
+        },
+        "exclude": {
+            "all": []
+        }
+    }
+}

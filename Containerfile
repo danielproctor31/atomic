@@ -3,20 +3,26 @@ ARG SILVERBLUE_VERSION=silverblue
 
 FROM quay.io/fedora-ostree-desktops/${SILVERBLUE_VERSION}:${FEDORA_MAJOR_VERSION}
 
+ENV FEDORA_MAJOR_VERSION=FEDORA_MAJOR_VERSION
+ENV SILVERBLUE_VERSION=SILVERBLUE_VERSION
+
+# copy sys files
 COPY files/etc /etc
 COPY files/usr /usr
 
-RUN sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+# copy installe files
+COPY install.sh /tmp/install.sh
+COPY packages.json /tmp/packages.json
 
-RUN rpm-ostree override remove firefox firefox-langpacks && \
-    # Enable repo's.
-    rpm-ostree install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
-    # Install packages.
-    rpm-ostree install vim zsh steam-devices wireguard-tools distrobox code docker docker-compose && \
-    # Enable auto-update
-    systemctl enable rpm-ostreed-automatic.timer && \
-    # Commit.
-    ostree container commit
+# enable auto updates
+RUN systemctl enable rpm-ostreed-automatic.timer
 
-# cleanup
-RUN rm -rf /etc/yum.repos.d/vscode.repo
+# run installer
+RUN chmod u+x /tmp/install.sh
+RUN /tmp/install.sh
+
+# cleanup installer files
+RUN rm -rf /tmp/*
+
+# commit
+RUN ostree container commit
