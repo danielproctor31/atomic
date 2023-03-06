@@ -1,4 +1,4 @@
-name: Build
+name: Kinote
 on:
   workflow_dispatch:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: danielproctor31/silverblue/.github/workflows/Build.yml
+    uses: danielproctor31/silverblue/.github/workflows/Build.yml@v1
     with:
       IMAGE_NAME: kinoite
       SILVERBLUE_VERSION: kinoite
