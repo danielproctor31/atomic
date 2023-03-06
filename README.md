@@ -13,7 +13,7 @@ sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielp
 
 ### Kinoite
 ```
-sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielproctor31/kinoite:latest
+sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielproctor31/silverblue:kinoite-latest
 ```
 
 You may or may not need the --experimental flag.
@@ -22,8 +22,7 @@ You may or may not need the --experimental flag.
 This image is signed with [sisgstore's cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the cosign.pub key from this repo and running the following command:
 
 ```
-cosign verify --key cosign.pub ghcr.io/danielproctor31/silverblue
-cosign verify --key cosign.pub ghcr.io/danielproctor31/kinoite
+cosign verify --key cosign.pub ghcr.io/danielproctor31/silverblue:<tag>
 ```
 
 ## Testing locally
