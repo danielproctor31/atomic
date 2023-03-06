@@ -1,19 +1,17 @@
 name: Build
 on:
-  workflow_call:
-    inputs:
-      IMAGE_TAGS:
-        required: true
-        type: string
-      SILVERBLUE_VERSION:
-          required: false
-          type: string 
-      FEDORA_MAJOR_VERSION:
-          required: false
-          type: number   
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+  schedule:
+    - cron: '0 0 * * *'  # midnight everyday
 
 env:
-  IMAGE_NAME: silverblue
+  FEDORA_MAJOR_VERSION: 37
+  IMAGE_TAGS: latest ${{ github.sha }}
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
   REGISTRY_USER: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ github.token }}
@@ -24,6 +22,8 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
+      matrix:
+        image_name: [silverblue, kinoite]
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
@@ -36,12 +36,12 @@ jobs:
         with:
           containerfiles: |
             ./Containerfile
-          image: ${{ env.IMAGE_NAME }}
-          tags: ${{ inputs.IMAGE_TAGS }}
+          image: ${{ matrix.image_name }}
+          tags: ${{ env.IMAGE_TAGS }}
           oci: true
           build-args: |
-            SILVERBLUE_VERSION=${{ inputs.SILVERBLUE_VERSION }} 
-            FEDORA_MAJOR_VERSION=${{ inputs.FEDORA_MAJOR_VERSION }}
+            SILVERBLUE_VERSION=${{ matrix.image_name }} 
+            FEDORA_MAJOR_VERSION=${{ env.FEDORA_MAJOR_VERSION }}
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
@@ -77,7 +77,7 @@ jobs:
 
       - name: Sign container image
         run: |
-          cosign sign -y --key cosign.key ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push.outputs.digest }}
+          cosign sign -y --key cosign.key ${{ env.IMAGE_REGISTRY }}/${{ matrix.image_name }}@${{ steps.push.outputs.digest }}
         env:
           COSIGN_EXPERIMENTAL: false
 
