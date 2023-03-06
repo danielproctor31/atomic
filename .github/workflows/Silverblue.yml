@@ -15,4 +15,4 @@ jobs:
     with:
       IMAGE_NAME: 'silverblue'
       SILVERBLUE_VERSION: 'silverblue'
-      FEDORA_MAJOR_VERSION: '37'
+      FEDORA_MAJOR_VERSION: 37
