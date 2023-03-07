@@ -21,10 +21,9 @@ RUN systemctl enable rpm-ostreed-automatic.timer
 RUN chmod u+x /tmp/install.sh
 RUN /tmp/install.sh
 
-# cleanup installer files
+# cleanup repo files
 RUN rm -rf /tmp/*
 RUN rm /etc/yum.repos.d/vscode.repo
-RUN rm /etc/yum.repos.d/kylegospo-webapp-manager-fedora-37.repo
 
 # commit
 RUN ostree container commit

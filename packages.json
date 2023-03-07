@@ -9,8 +9,7 @@
                 "distrobox",
                 "code",
                 "docker",
-                "docker-compose",
-                "webapp-manager"
+                "docker-compose"
             ],
             "silverblue": [
                 "gnome-tweaks",
