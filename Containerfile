@@ -23,6 +23,8 @@ RUN /tmp/install.sh
 
 # cleanup installer files
 RUN rm -rf /tmp/*
+RUN rm /etc/yum.repos.d/vscode.repo
+RUN rm /etc/yum.repos.d/kylegospo-webapp-manager-fedora-37.repo
 
 # commit
 RUN ostree container commit

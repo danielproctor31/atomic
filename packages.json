@@ -9,12 +9,14 @@
                 "distrobox",
                 "code",
                 "docker",
-                "docker-compose"
+                "docker-compose",
+                "webapp-manager"
             ],
             "silverblue": [
                 "gnome-tweaks",
                 "gnome-shell-extension-appindicator",
-                "gnome-shell-extension-dash-to-dock"
+                "gnome-shell-extension-dash-to-dock",
+                "gnome-shell-extension-wireguard-indicator"
             ]
         },
         "exclude": {
