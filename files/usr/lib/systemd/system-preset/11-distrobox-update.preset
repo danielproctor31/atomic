@@ -1,1 +1,1 @@
-enable distrobox-update.*
+enable distrobox-update.service

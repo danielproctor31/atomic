@@ -1,1 +1,1 @@
-enable flatpak-system-update.*
+enable flatpak-system-update.service

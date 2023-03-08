@@ -16,6 +16,9 @@ COPY packages.json /tmp/packages.json
 
 # enable auto updates
 RUN systemctl enable rpm-ostreed-automatic.timer
+RUN systemctl enable distrobox-update.timer
+RUN systemctl enable flatpak-system-update.timer
+RUN systemctl --global enable flatpak-user-update.timer
 
 # install fonts
 RUN fc-cache -f /usr/share/fonts/nerdfonts
