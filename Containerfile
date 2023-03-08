@@ -27,6 +27,7 @@ RUN /tmp/install.sh
 # cleanup repo files
 RUN rm -rf /tmp/*
 RUN rm /etc/yum.repos.d/vscode.repo
+RUN rm /etc/yum.repos.d/starship.repo
 
 # commit
 RUN ostree container commit
