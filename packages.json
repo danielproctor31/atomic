@@ -2,8 +2,8 @@
     "all": {
         "include": {
             "all": [
-                "vim",
                 "zsh",
+                "starship",
                 "steam-devices",
                 "wireguard-tools",
                 "distrobox",
