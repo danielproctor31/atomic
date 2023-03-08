@@ -9,7 +9,9 @@
                 "distrobox",
                 "code",
                 "docker",
-                "docker-compose"
+                "docker-compose",
+                "vim",
+                "nano"
             ],
             "silverblue": [
                 "gnome-tweaks",
