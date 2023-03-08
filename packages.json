@@ -3,7 +3,6 @@
         "include": {
             "all": [
                 "zsh",
-                "starship",
                 "steam-devices",
                 "wireguard-tools",
                 "distrobox",
