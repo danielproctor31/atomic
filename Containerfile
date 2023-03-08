@@ -17,6 +17,9 @@ COPY packages.json /tmp/packages.json
 # enable auto updates
 RUN systemctl enable rpm-ostreed-automatic.timer
 
+# install fonts
+RUN fc-cache -f /usr/share/fonts/nerdfonts
+
 # run installer
 RUN chmod u+x /tmp/install.sh
 RUN /tmp/install.sh
