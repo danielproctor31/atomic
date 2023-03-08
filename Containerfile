@@ -24,7 +24,7 @@ RUN systemctl --global enable flatpak-user-update.timer
 RUN fc-cache -f /usr/share/fonts/nerdfonts
 
 # run installer
-RUN chmod u+x /tmp/install.sh
+RUN chmod +x /tmp/install.sh
 RUN /tmp/install.sh
 
 # cleanup repo files
