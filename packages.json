@@ -8,7 +8,6 @@
                 "wireguard-tools",
                 "distrobox",
                 "code",
-                "python3.11",
                 "docker",
                 "docker-compose",
                 "vim",
