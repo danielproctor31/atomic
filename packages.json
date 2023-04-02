@@ -9,6 +9,7 @@
                 "distrobox",
                 "code",
                 "podman-compose",
+                "podman-docker",
                 "vim",
                 "nano",
                 "virt-manager"
