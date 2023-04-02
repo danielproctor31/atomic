@@ -4,6 +4,8 @@ Based on the work done in: https://github.com/ublue-os
 
 This is my own custom image for Fedora Silverblue which can be used to quickly setup and new system to my preference and provide future updates.
 
+**Currently i'm using [Kinoite](https://kinoite.fedoraproject.org/) so the build is setup to only build the kinoite variant. The silverblue package will not be updated. For any of the commands documented silverblue can be replaced by kinoite where applicable.**
+
 ## Usage
 
 ```
