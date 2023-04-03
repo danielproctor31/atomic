@@ -1,7 +1,1 @@
-#  User I2C/SMBus
-KERNEL=="i2c-[0-99]*", TAG+="uaccess"
-
-#  Super I/O
-KERNEL=="port", TAG+="uaccess"
-
 SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0259", TAG+="uaccess", TAG+="Razer_Blade_Stealth_Late_2020"
