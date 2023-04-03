@@ -8,7 +8,7 @@
                 "wireguard-tools",
                 "distrobox",
                 "code",
-                "podman-docker",
+                "docker",
                 "docker-compose",
                 "vim",
                 "nano",
