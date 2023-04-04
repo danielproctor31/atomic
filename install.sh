@@ -17,9 +17,12 @@ if [[ "${#EXCLUDED_PACKAGES[@]}" -gt 0 ]]; then
 fi
 
 # add repo's
+# TODO - remove dockerpty rpm once there is a release for fedora 38 https://packages.fedoraproject.org/pkgs/python-dockerpty/python3-dockerpty/
+# docker-pty is required for docker-compose
 wget -P /tmp/rpms \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${RELEASE}.noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${RELEASE}.noarch.rpm
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${RELEASE}.noarch.rpm \
+    https://kojipkgs.fedoraproject.org//packages/python-dockerpty/0.4.1/26.fc37/noarch/python3-dockerpty-0.4.1-26.fc37.noarch.rpm
 
 
 # install
