@@ -12,7 +12,8 @@
                 "docker-compose",
                 "vim",
                 "nano",
-                "virt-manager"
+                "virt-manager",
+                "openrgb"
             ],
             "silverblue": [
                 "gnome-tweaks",
