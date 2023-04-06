@@ -34,7 +34,7 @@ RUN rm /etc/yum.repos.d/starship.repo
 
 # Fix for fedora 38 - Remove leftover unbound files
 # TODO - check this is still needed once fedora 38 is officially released
-RUN rm -rf /go /var/lib/unbound
+RUN rm -rf /var/lib/unbound
 
 # commit
 RUN ostree container commit
