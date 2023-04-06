@@ -47,3 +47,17 @@ else
     echo "No packages to install."
 
 fi
+
+# install fonts
+curl -fLo "/usr/share/fonts/nerdfonts/Caskaydia Cove Nerd Font Complete Regular.otf" \
+    https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/CascadiaCode/Regular/complete/Caskaydia%20Cove%20Nerd%20Font%20Complete%20Regular.otf
+curl -fLo "/usr/share/fonts/nerdfonts/Caskaydia Cove Nerd Font Complete Mono.otf" \
+    https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/CascadiaCode/Regular/complete/Caskaydia%20Cove%20Nerd%20Font%20Complete%20Mono.otf
+
+fc-cache -f /usr/share/fonts/nerdfonts
+
+# enable auto updates
+systemctl enable rpm-ostreed-automatic.timer
+systemctl enable flatpak-system-update.timer
+systemctl --global enable flatpak-user-update.timer
+systemctl --global enable distrobox-update.timer

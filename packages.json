@@ -13,7 +13,8 @@
                 "vim",
                 "nano",
                 "virt-manager",
-                "openrgb-udev-rules"
+                "openrgb-udev-rules",
+                "powerline-fonts"
             ],
             "silverblue": [
                 "gnome-tweaks",
