@@ -10,7 +10,7 @@ ENV SILVERBLUE_VERSION=SILVERBLUE_VERSION
 COPY files/etc /etc
 COPY files/usr /usr
 
-# copy installe files
+# copy install files
 COPY install.sh /tmp/install.sh
 COPY packages.json /tmp/packages.json
 
