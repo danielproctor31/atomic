@@ -13,7 +13,7 @@
                 "vim",
                 "nano",
                 "virt-manager",
-                "openrgb"
+                "openrgb-udev-rules"
             ],
             "silverblue": [
                 "gnome-tweaks",
