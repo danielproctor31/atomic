@@ -23,8 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_name: [kinoite]
-#        image_name: [silverblue, kinoite]
+        image_name: [silverblue, kinoite]
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
