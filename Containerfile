@@ -12,11 +12,16 @@ COPY files/usr /usr
 
 # copy install files
 COPY install.sh /tmp/install.sh
+COPY post-install.sh /tmp/post-install.sh
 COPY packages.json /tmp/packages.json
 
 # run installer
 RUN chmod +x /tmp/install.sh && \
     /tmp/install.sh
+    
+# run post install
+RUN chmod +x /tmp/post-install.sh && \
+    /tmp/post-install.sh
 
 # cleanup
 RUN rm -rf \
