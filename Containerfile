@@ -7,13 +7,11 @@ ENV FEDORA_MAJOR_VERSION=FEDORA_MAJOR_VERSION
 ENV SILVERBLUE_VERSION=SILVERBLUE_VERSION
 
 # copy sys files
-COPY files/etc /etc
-COPY files/usr /usr
+COPY files/* /
+RUN chmod +x /usr/bin/firstboot.bin
 
 # copy install files
-COPY install.sh /tmp/install.sh
-COPY post-install.sh /tmp/post-install.sh
-COPY packages.json /tmp/packages.json
+COPY temp temp
 
 # run installer
 RUN chmod +x /tmp/install.sh && \

@@ -12,9 +12,7 @@
                 "docker-compose",
                 "vim",
                 "nano",
-                "virt-manager",
-                "openrgb-udev-rules",
-                "powerline-fonts"
+                "openrgb-udev-rules"
             ],
             "silverblue": [
                 "gnome-tweaks",

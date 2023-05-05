@@ -1,0 +1,11 @@
+[Unit]
+Description=Firstboot Installer
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/firstboot
+
+[Install]
+WantedBy=graphical.target
