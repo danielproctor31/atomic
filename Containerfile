@@ -11,7 +11,7 @@ COPY files/* /
 RUN chmod +x /usr/bin/firstboot.bin
 
 # copy install files
-COPY temp temp
+COPY tmp tmp
 
 # run installer
 RUN chmod +x /tmp/install.sh && \
