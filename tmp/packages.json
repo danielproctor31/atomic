@@ -2,6 +2,10 @@
     "all": {
         "include": {
             "all": [
+                "gcc",
+                "g++",
+                "libc6-dev",
+                "make"
                 "zsh",
                 "starship",
                 "steam-devices",
@@ -12,8 +16,7 @@
                 "docker-compose",
                 "vim",
                 "nano",
-                "openrgb-udev-rules",
-                "build-essential"
+                "openrgb-udev-rules"
             ],
             "silverblue": [
                 "gnome-tweaks",
