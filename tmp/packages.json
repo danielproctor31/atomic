@@ -2,10 +2,6 @@
     "all": {
         "include": {
             "all": [
-                "gcc",
-                "g++",
-                "glibc-devel",
-                "make",
                 "zsh",
                 "starship",
                 "steam-devices",
