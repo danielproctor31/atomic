@@ -12,7 +12,8 @@
                 "docker-compose",
                 "vim",
                 "nano",
-                "openrgb-udev-rules"
+                "openrgb-udev-rules",
+                "build-essential"
             ],
             "silverblue": [
                 "gnome-tweaks",
