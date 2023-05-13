@@ -18,7 +18,8 @@
                 "gnome-tweaks",
                 "yaru-theme",
                 "gnome-shell-extension-appindicator",
-                "gnome-shell-extension-dash-to-dock"
+                "gnome-shell-extension-dash-to-dock",
+                "gnome-shell-extension-user-theme"
             ],
             "kinoite": [
             ]
@@ -27,10 +28,15 @@
             "all": [
                 "firefox",
                 "firefox-langpacks"
+            ],
+            "silverblue": [
+                "gnome-tour"
+            ],
+            "kinoite": [
             ]
         }
     },
-    "37": {
+    "38": {
         "include": {
             "all": []
         },
@@ -38,7 +44,7 @@
             "all": []
         }
     },
-    "38": {
+    "rawhide": {
         "include": {
             "all": []
         },
