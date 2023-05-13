@@ -11,8 +11,8 @@ enable-hot-corners=false
 font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Ubuntu 11'
-gtk-theme='Yaru-dark'
-icon-theme='Yaru'
+gtk-theme='Yaru-blue-dark'
+icon-theme='Yaru-blue'
 monospace-font-name='Ubuntu Mono 13'
 
 [org/gnome/desktop/peripherals/mouse]
@@ -27,9 +27,6 @@ recent-files-max-age=30
 remove-old-temp-files=true
 remove-old-trash-files=true
 report-technical-problems=true
-
-[org/gnome/desktop/sound]
-theme-name='Yaru'
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
@@ -59,8 +56,7 @@ multi-monitor=false
 transparency-mode='FIXED'
 
 [org/gnome/shell/extensions/user-theme]
-name='Yaru-dark'
-
+name='Yaru-blue-dark'
 
 [org/gnome/system/location]
-enabled=false
+enabled=true
