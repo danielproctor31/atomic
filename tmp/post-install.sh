@@ -16,5 +16,5 @@ else
   # remove gnome specific items
   rm /etc/systemd/system/dconf-update.service
   rm -r /usr/share/fonts/Ubuntu
-  rm -r /usr/share/fonts/Ubuntu-Mono
+  rm -r /usr/share/fonts/Ubuntu_Mono
 fi
