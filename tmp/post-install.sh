@@ -12,6 +12,10 @@ if [ $SILVERBLUE_VERSION = "silverblue" ]; then
   # enable dconf update
   systemctl unmask dconf-update.service
   systemctl enable dconf-update.service
+  
+  # install fonts
+  fc-cache -f /usr/share/fonts/Ubuntu
+  fc-cache -f /usr/share/fonts/Ubuntu_Mono
 else
   # remove gnome specific items
   rm /etc/systemd/system/dconf-update.service
