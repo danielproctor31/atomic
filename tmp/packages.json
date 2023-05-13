@@ -16,6 +16,7 @@
             ],
             "silverblue": [
                 "gnome-tweaks",
+                "yaru-theme",
                 "gnome-shell-extension-appindicator",
                 "gnome-shell-extension-dash-to-dock",
                 "gnome-shell-extension-wireguard-indicator"
