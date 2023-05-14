@@ -12,7 +12,22 @@ sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielp
 
 Depending on your current version, you may or may not need the --experimental flag.
 
+### Deployment Pinning
+
 It is recommended to [pin the deployment after](https://docs.fedoraproject.org/en-US/fedora-silverblue/faq/#_about_using_silverblue) the rebase and reboot so you can safely rollback.
+
+### Flatpak and Web Browser
+
+By default there is no web browser. I recommend setting up the Flathub Repository for Flatpak and installing Firefox.
+
+```
+# Add flathub repo at the system and user level
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Install Firefox at the system level
+flatpak install flathub org.mozilla.firefox
+```
 
 ## Nvidia
 

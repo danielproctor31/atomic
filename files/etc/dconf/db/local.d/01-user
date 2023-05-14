@@ -1,37 +1,22 @@
-[org/gnome/desktop/input-sources]
-current=uint32 0
-sources=[('xkb', 'gb'), ('ibus', 'anthy')]
-xkb-options=@as []
-
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 cursor-theme='Yaru'
 document-font-name='Sans 11'
 enable-hot-corners=false
-font-antialiasing='grayscale'
-font-hinting='slight'
 font-name='Ubuntu 11'
 gtk-theme='Yaru-blue-dark'
 icon-theme='Yaru-blue'
 monospace-font-name='Ubuntu Mono 13'
-
-[org/gnome/desktop/peripherals/mouse]
-natural-scroll=false
-
-[org/gnome/desktop/peripherals/touchpad]
-two-finger-scrolling-enabled=true
 
 [org/gnome/desktop/privacy]
 old-files-age=uint32 30
 recent-files-max-age=30
 remove-old-temp-files=true
 remove-old-trash-files=true
-report-technical-problems=true
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 titlebar-font='Ubuntu Bold 11'
-
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
@@ -43,17 +28,12 @@ sleep-inactive-ac-type='nothing'
 [org/gnome/shell]
 disabled-extensions=['background-logo@fedorahosted.org']
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
+favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']
 
 [org/gnome/shell/extensions/dash-to-dock]
-apply-custom-theme=false
-background-opacity=0.80000000000000004
-dash-max-icon-size=48
 dock-fixed=true
 dock-position='LEFT'
 extend-height=true
-height-fraction=0.90000000000000002
-multi-monitor=false
-transparency-mode='FIXED'
 
 [org/gnome/shell/extensions/user-theme]
 name='Yaru-blue-dark'
