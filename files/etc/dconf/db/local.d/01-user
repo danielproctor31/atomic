@@ -9,11 +9,15 @@ icon-theme='Yaru-blue'
 locate-pointer=true
 monospace-font-name='Ubuntu Mono 13'
 
+[org/gnome/desktop/notifications]
+show-banners=false
+
 [org/gnome/desktop/privacy]
 old-files-age=uint32 30
 recent-files-max-age=30
 remove-old-temp-files=true
 remove-old-trash-files=true
+report-technical-problems=false
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
@@ -25,6 +29,12 @@ night-light-schedule-automatic=true
 
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-type='nothing'
+
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+
+[org/gnome/desktop/sound]
+event-sounds=false
 
 [org/gnome/shell]
 disabled-extensions=['background-logo@fedorahosted.org']
