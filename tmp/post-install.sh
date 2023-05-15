@@ -19,6 +19,8 @@ if [ $SILVERBLUE_VERSION = "silverblue" ]; then
 else
   # remove gnome specific items
   rm /etc/systemd/system/dconf-update.service
+  rm -r /usr/share/fonts/ubuntu
+  rm -r /usr/share/fonts/ubuntu-mono
 fi
 
 # install other fonts
