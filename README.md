@@ -34,8 +34,8 @@ flatpak install flathub org.mozilla.firefox
 For Nvidia based systems, it is recommended to install the drivers manually and updating the kernel parameters after rebasing the system.
 
 ```
-rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia
-rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1 initcall_blacklist=simpledrm_platform_driver_init
+sudo rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia
+sudo rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1 initcall_blacklist=simpledrm_platform_driver_init
 ```
 
 References:
