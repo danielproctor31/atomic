@@ -25,7 +25,6 @@ RUN chmod +x /tmp/post-install.sh && \
 RUN rm -rf \
     /tmp/* \
     /var/* \
-    /etc/yum.repos.d/vscode.repo \
     /etc/yum.repos.d/starship.repo
 
 # commit

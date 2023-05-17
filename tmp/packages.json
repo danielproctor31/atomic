@@ -7,7 +7,6 @@
                 "steam-devices",
                 "wireguard-tools",
                 "distrobox",
-                "code",
                 "docker",
                 "docker-compose",
                 "vim",
