@@ -9,6 +9,7 @@
                 "distrobox",
                 "podman-docker",
                 "podman-compose",
+                "docker-compose",
                 "vim",
                 "nano",
                 "openrgb-udev-rules"
