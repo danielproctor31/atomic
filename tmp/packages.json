@@ -7,8 +7,8 @@
                 "steam-devices",
                 "wireguard-tools",
                 "distrobox",
-                "docker",
-                "docker-compose",
+                "podman-docker",
+                "podman-compose",
                 "vim",
                 "nano",
                 "openrgb-udev-rules"
