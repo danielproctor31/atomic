@@ -11,6 +11,8 @@
                 "docker-compose",
                 "vim",
                 "nano",
+		"code",
+		"stow",
                 "openrgb-udev-rules"
             ],
             "silverblue": [
