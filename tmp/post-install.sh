@@ -8,7 +8,7 @@ systemctl enable flatpak-system-update.timer
 systemctl --global enable flatpak-user-update.timer
 systemctl --global enable distrobox-update.timer
 
-if [ $SILVERBLUE_VERSION = "silverblue" ]; then
+if [ $VARIANT = "silverblue" ]; then
   # enable dconf update
   systemctl unmask dconf-update.service
   systemctl enable dconf-update.service
