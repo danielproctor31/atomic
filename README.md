@@ -6,15 +6,19 @@ This is my own image for [Fedora Atomic Desktops](https://fedoraproject.org/atom
 
 ## Usage
 
+Silverblue:
 ```
-sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/danielproctor31/silverblue:latest
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/danielproctor31/silverblue:latest
 ```
 
-Depending on your current version, you may or may not need the --experimental flag.
+Kinoite:
+```
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/danielproctor31/kinoite:latest
+```
 
 ### Deployment Pinning
 
-It is recommended to [pin the deployment after](https://docs.fedoraproject.org/en-US/fedora-silverblue/faq/#_about_using_silverblue) the rebase and reboot so you can safely rollback.
+It is recommended to [pin the deployment after](https://docs.fedoraproject.org/en-US/fedora-silverblue/faq/#_how_can_i_upgrade_my_system_to_the_next_major_version_for_instance_rawhide_or_an_upcoming_fedora_release_branch_while_keeping_my_current_deployment) the rebase and reboot so you can safely rollback.
 
 ### Flatpak and Web Browser
 
@@ -46,6 +50,9 @@ This image is signed with [sisgstore's cosign](https://docs.sigstore.dev/cosign/
 
 ```
 cosign verify --key cosign.pub ghcr.io/danielproctor31/silverblue
+```
+```
+cosign verify --key cosign.pub ghcr.io/danielproctor31/kinoite
 ```
 
 ## Testing locally
