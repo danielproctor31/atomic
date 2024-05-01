@@ -6,6 +6,8 @@
                 "starship",
                 "steam-devices",
                 "wireguard-tools",
+		"docker",
+		"docker-compose",
                 "distrobox",
                 "neovim",
                 "nano",
@@ -35,7 +37,7 @@
             ]
         }
     },
-    "38": {
+    "40": {
         "include": {
             "all": []
         },
