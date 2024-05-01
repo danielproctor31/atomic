@@ -7,7 +7,7 @@
                 "steam-devices",
                 "wireguard-tools",
                 "distrobox",
-                "vim",
+                "neovim",
                 "nano",
 		"code",
 		"stow",
