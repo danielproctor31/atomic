@@ -20,8 +20,7 @@ fi
 # add repo's
 wget -P /tmp/rpms \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${RELEASE}.noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${RELEASE}.noarch.rpm \
-    https://desktop.docker.com/linux/main/amd64/145265/docker-desktop-4.29.0-x86_64.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${RELEASE}.noarch.rpm
 
 # install
 rpm-ostree install \
