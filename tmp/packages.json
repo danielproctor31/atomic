@@ -7,13 +7,11 @@
                 "steam-devices",
                 "wireguard-tools",
                 "distrobox",
-                "docker-desktop",
                 "vim",
                 "nano",
 		"code",
 		"stow",
-                "openrgb-udev-rules",
-	    	"dnf-plugins-core"
+                "openrgb-udev-rules"
             ],
             "silverblue": [
                 "gnome-tweaks",
