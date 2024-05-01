@@ -4,11 +4,11 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-INCLUDED_PACKAGES=($(jq -r "[(.all.include | (.all, select(.\"$SILVERBLUE_VERSION\" != null).\"$SILVERBLUE_VERSION\")[]), \
-                             (select(.\"$FEDORA_MAJOR_VERSION\" != null).\"$FEDORA_MAJOR_VERSION\".include | (.all, select(.\"$SILVERBLUE_VERSION\" != null).\"$SILVERBLUE_VERSION\")[])] \
+INCLUDED_PACKAGES=($(jq -r "[(.all.include | (.all, select(.\"$VARIANT\" != null).\"$VARIANT\")[]), \
+                             (select(.\"$FEDORA_MAJOR_VERSION\" != null).\"$FEDORA_MAJOR_VERSION\".include | (.all, select(.\"$VARIANT\" != null).\"$VARIANT\")[])] \
                              | sort | unique[]" /tmp/packages.json))
-EXCLUDED_PACKAGES=($(jq -r "[(.all.exclude | (.all, select(.\"$SILVERBLUE_VERSION\" != null).\"$SILVERBLUE_VERSION\")[]), \
-                             (select(.\"$FEDORA_MAJOR_VERSION\" != null).\"$FEDORA_MAJOR_VERSION\".exclude | (.all, select(.\"$SILVERBLUE_VERSION\" != null).\"$SILVERBLUE_VERSION\")[])] \
+EXCLUDED_PACKAGES=($(jq -r "[(.all.exclude | (.all, select(.\"$VARIANT\" != null).\"$VARIANT\")[]), \
+                             (select(.\"$FEDORA_MAJOR_VERSION\" != null).\"$FEDORA_MAJOR_VERSION\".exclude | (.all, select(.\"$VARIANT\" != null).\"$VARIANT\")[])] \
                              | sort | unique[]" /tmp/packages.json))
 
 
@@ -21,6 +21,7 @@ fi
 wget -P /tmp/rpms \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${RELEASE}.noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${RELEASE}.noarch.rpm \
+    https://desktop.docker.com/linux/main/amd64/145265/docker-desktop-4.29.0-x86_64.rpm \
 
 # install
 rpm-ostree install \
