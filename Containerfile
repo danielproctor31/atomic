@@ -26,7 +26,8 @@ RUN rm -rf \
     /tmp/* \
     /var/* \
     /etc/yum.repos.d/vscode.repo \
-    /etc/yum.repos.d/starship.repo
+    /etc/yum.repos.d/starship.repo \
+    /etc/yum.repos.d/docker-ce.repo
 
 # commit
 RUN ostree container commit
