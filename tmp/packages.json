@@ -6,15 +6,16 @@
                 "starship",
                 "steam-devices",
                 "wireguard-tools",
-		"docker",
-		"docker-compose",
+                "podman",
+                "podman-docker",
+                "docker-compose",
                 "distrobox",
                 "neovim",
                 "nano",
-		"code",
-		"stow",
+                "code",
+                "stow",
                 "openrgb-udev-rules",
-		"dotnet-sdk-8.0"
+		        "dotnet-sdk-8.0"
             ],
             "silverblue": [
                 "gnome-tweaks",
